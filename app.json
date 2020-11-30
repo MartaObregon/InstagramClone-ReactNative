@@ -1,0 +1,12 @@
+{
+  "name": "InstagramClone-ReactNative",
+  "displayName": "InstagramClone-ReactNative",
+  "expo": {
+    "name": "InstagramClone-ReactNative",
+    "slug": "InstagramClone-ReactNative",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
