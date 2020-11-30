@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import React from 'react';
+import { SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import  Header  from './components/Header';
+import Post from './components/Post';
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    
+      <SafeAreaView style={{ flex: 0, backgroundColor:'white', color:'black'}}>
+    <StatusBar barStyle="dark-content" />
+      <View style={styles.app}>
+      <Header/>
+      <ScrollView style={{height:1000}}>
+      <Post/>
+      
+      
+      
+      
+      
+
+      </ScrollView>
+      
+      
+      
+      
     </View>
+    </SafeAreaView>
+    
+    
+    
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  app: {
+    margin:0,
+    backgroundColor: '#fafafa',
+    
+    
   },
+  
 });
+ export default App;
