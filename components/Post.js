@@ -2,22 +2,22 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import { Avatar } from 'react-native-paper';
 
-const Post = () => {
+const Post = ({imageUrl, username, caption} ) => {
     return (
         <View style={styles.post}>
             <View style={styles.postHeader}>
                 <Avatar.Image style={styles.postAvatar} size={40} source={{uri:'https://randomuser.me/api/portraits/women/3.jpg'}} />
-                <Text>MarianRobinson</Text>
+                <Text style={{fontWeight:'bold'}}>{username}</Text>
                 
 
             </View>
             <Image
             style={styles.postImage}
-            source={{uri:'https://i.pinimg.com/originals/3e/72/6f/3e726f015975ebd9791a2eae433f4d17.jpg'}}
+            source={{uri:imageUrl}}
             />
             <View style={styles.postCaption}>
-                <Text style={{fontWeight:'bold'}}>Username:</Text>
-                <Text> caption lores esptum gapset ksksp</Text>
+                <Text style={{fontWeight:'bold'}}>{username}</Text>
+                <Text  style={{textAlign:'left', flexShrink:1}}> {caption}</Text>
             </View>
         </View>
     )
@@ -25,10 +25,10 @@ const Post = () => {
 const styles = StyleSheet.create({
     post:{
         width:'100%',
-        height: '100%',
+        
         display:'flex',
         flexDirection:'column',
-        
+        marginBottom:30,
         backgroundColor:'white',
         
         
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     postImage: {
         width:'100%',
-        height: 300,
+        height: 400,
         resizeMode:'cover',
         borderTopColor:'lightgray',
         borderTopWidth:1,
@@ -54,11 +54,13 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
     }, 
     postCaption: {
-        height:'100%',
-        paddingTop:10,
         marginLeft:10,
         display:'flex', 
-        flexDirection:'row'
+        flexDirection:'row', 
+        paddingTop:10,
+        height:40,
+        flexWrap:'wrap'
+        
     },
 
 })
